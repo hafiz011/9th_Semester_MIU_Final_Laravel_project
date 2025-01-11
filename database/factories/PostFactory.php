@@ -17,10 +17,13 @@ class PostFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->text(120),
-            'desctiption' => fake()->text(500),
+            'title' => fake()->sentence(15),
+            'description' => fake()->paragraph(100),
+            'author' => fake()->name(),
+            'location' => fake()->city(),
+            'image' => fake()->imageUrl(300, 300),
             'email' => fake()->email(),
-            'phone' => fake()->unique()->e164PhoneNumber(),
+            'phone' => fake()->phoneNumber(),
         ];
     }
 }
